@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(){
         }
 
         btnSendMsgToNextActivity.setOnClickListener {
-            val message : String = etUserMessage.text.toString()
+            val message: String = etUserMessage.text.toString()
             val intent = Intent(this, SecondAcitivity::class.java)
 
             intent.putExtra("user_message", message)
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(){
 
         btnShareToOtherApps.setOnClickListener {
 
-            val message : String = etUserMessage.text.toString()
+            val message: String = etUserMessage.text.toString()
 
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
@@ -38,6 +38,14 @@ class MainActivity : AppCompatActivity(){
 
             startActivity(Intent.createChooser(intent, "Please select app: "))
         }
+
+            btnRecyclerViewDemo.setOnClickListener {
+
+                val  intent = Intent(this, HobbiesActivity::class.java)
+                startActivity(intent)
+
+            }
+
     }
 
 }
