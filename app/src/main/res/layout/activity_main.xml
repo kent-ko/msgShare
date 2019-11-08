@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
     <Button
@@ -18,21 +18,21 @@
 
     <EditText
         android:id="@+id/etUserMessage"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
         android:ems="10"
-        android:hint="Enter your Message" />
+        android:hint="@string/enter_your_message" />
 
     <Button
         android:id="@+id/btnSendMsgToNextActivity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Data To Next Activity" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="@string/send_data_to_next_activity" />
 
     <Button
         android:id="@+id/btnShareToOtherApps"
@@ -41,14 +41,14 @@
         android:layout_below="@id/btnSendMsgToNextActivity"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Share To Other APPS" />
+        android:text="@string/share_to_other_apps" />
 
     <Button
         android:id="@+id/btnRecyclerViewDemo"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnShareToOtherApps"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Recycler View Demo" />
+        android:text="@string/recycler_view_demo" />
 </RelativeLayout>

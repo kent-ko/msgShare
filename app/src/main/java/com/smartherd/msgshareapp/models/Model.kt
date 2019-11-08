@@ -1,11 +1,11 @@
-package com.smartherd.msgshareapp
+package com.smartherd.msgshareapp.models
 
 data class Hobby(var title : String)
 
 
 object Supplier{
 
-    val hobbies = listOf<Hobby>(
+    val hobbies = listOf(
 
         Hobby("Swimming"),
         Hobby("BasketBall"),

@@ -1,13 +1,20 @@
-package com.smartherd.msgshareapp
+package com.smartherd.msgshareapp.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.smartherd.msgshareapp.Constants
+import com.smartherd.msgshareapp.R
+import com.smartherd.msgshareapp.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
+
+    companion object {
+        val TAG : String = MainActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,15 +22,16 @@ class MainActivity : AppCompatActivity(){
 
         buttonShowToast.setOnClickListener {
             //Code
-            Log.i("MainActivity", "Button was Clicked!")
-            Toast.makeText(this, "Button was clicked!", Toast.LENGTH_LONG).show()
+            Log.i(TAG, "Button was Clicked!")
+            showToast(resources.getString(R.string.btn_is_clicked), Toast.LENGTH_LONG )
+//            Toast.makeText(this, "Button was clicked!", Toast.LENGTH_LONG).show()
         }
 
         btnSendMsgToNextActivity.setOnClickListener {
             val message: String = etUserMessage.text.toString()
             val intent = Intent(this, SecondAcitivity::class.java)
 
-            intent.putExtra("user_message", message)
+            intent.putExtra(Constants.USER_MSG_KEY, message)
             startActivity(intent)
         }
 
@@ -39,12 +47,12 @@ class MainActivity : AppCompatActivity(){
             startActivity(Intent.createChooser(intent, "Please select app: "))
         }
 
-            btnRecyclerViewDemo.setOnClickListener {
+        btnRecyclerViewDemo.setOnClickListener {
 
-                val  intent = Intent(this, HobbiesActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(this, HobbiesActivity::class.java)
+            startActivity(intent)
 
-            }
+        }
 
     }
 
